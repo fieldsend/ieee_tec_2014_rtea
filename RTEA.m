@@ -64,7 +64,7 @@ if (l<1)
     error('Cannot have zero or fewer design variables');
 end
 if (num_obj<1)
-    error('Cannot have zero or objectives');
+    error('Cannot have zero or fewer objectives');
 end
 if (p_mut<0)
     error('Mutation probability should not be negative');
