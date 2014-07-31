@@ -66,8 +66,8 @@ end
 if (num_obj<1)
     error('Cannot have zero or fewer objectives');
 end
-if (p_mut<0)
-    error('Mutation probability should not be negative');
+if (std_mut<0)
+    error('Mutation width should not be negative');
 end
 if (p_cross<0)
     error('Crossover probability should not be negative');
