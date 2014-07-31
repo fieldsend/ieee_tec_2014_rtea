@@ -114,7 +114,6 @@ while (evals < evaluations)
     
         [X, Y_mo, Y_n, Y_dom, index, I_dom] = evaluate_and_set_state(...
             cost_function,x,num_obj,1,func_arg, X, Y_mo, Y_n, Y_dom, index, -1,I_dom,evals);
-        %[print_stats,h]=two_d_print(Y_mo, X,Y_n, index, num_obj,I_dom,func_arg,print_stats,h);
         evals = evals+1;
     end
     
@@ -127,7 +126,6 @@ while (evals < evaluations)
         % now see if membership of I_dom should be changed
         [X, Y_mo, Y_n,Y_dom, index, I_dom] = evaluate_and_set_state(...
             cost_function,x,num_obj,1,func_arg, X, Y_mo, Y_n,Y_dom,index, copy_index,I_dom,evals);
-        %[print_stats,h]=two_d_print(Y_mo, X, Y_n, index, live_indices, num_obj,I_dom,func_arg,print_stats,h);
         evals = evals+1;
     end
     
