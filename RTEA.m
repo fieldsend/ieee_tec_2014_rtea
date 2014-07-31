@@ -17,7 +17,7 @@ function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,cost_function,domain_fu
 % appropriate ML estimator (e.g. Guassian).
 %
 % If your problem is constrained as well as bounded, then set p_cross to
-% 0.0 as currently the constraint and bound checks are online in the 
+% 0.0 as currently the constraint and bound checks are only in the 
 % mutation operator
 %
 % Uses the single_link_guardian_iterative function, which is also available
