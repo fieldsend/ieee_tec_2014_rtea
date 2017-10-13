@@ -94,7 +94,7 @@ Y_n(1) = 1;
 I_dom = 1;
 index = 2; % index of next element to add
 % sample next 99
-for i=2:100;
+for i=2:100
     x = generate_legal_initial_solution(domain_function, l, func_arg);
     [X, Y_mo, Y_n, Y_dom, index, I_dom] = evaluate_and_set_state(...
         cost_function,x,num_obj,1,func_arg, X, Y_mo, Y_n, Y_dom, index, -1, I_dom,i);
