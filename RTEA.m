@@ -7,7 +7,8 @@ function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,cost_function,domain_fu
 % Fieldsend JE & Everson RM.
 % The Rolling Tide Evolutionary Algorithm:  A Multi-Objective Optimiser 
 % for Noisy Optimisation Problems, 
-% IEEE Transactions on Evolutionary Computation, 
+% IEEE Transactions on Evolutionary Computation, 19(1), pages
+% 103-117, 2015  
 % (in press) -- available online via IEEE Explore since Feburary 2014.
 %
 % Please cite the above work if you use this code
