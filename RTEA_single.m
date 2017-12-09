@@ -1,7 +1,7 @@
 function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA_single(evaluations,initial_function,cost_function,evolution_function,num_obj,func_arg)
 
 
-% function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA_single(evaluations,extra_evals,cost_function,domain_function,l,num_obj,p_mut,p_cross,func_arg)
+% function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA_single(evaluations,initial_function,cost_function,evolution_function,num_obj,func_arg)
 %
 % Code relates to:
 % Fieldsend JE & Everson RM.
@@ -26,12 +26,20 @@ function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA_single(evaluations,initial_function
 % INPUTS:
 %
 % evalutions = total number of function evaluations
-% cost_function = string with name of multi-objective function to be 
+% initial_function = string with name of function to generate
+%          initial legal designs (e.g. random designs)
+% cost_function = string with name oF multi-objective function to be 
 %          optimised, should take a design vector and the func_arg 
 %          structure as arguments and return a 1 by num_obj vector of 
-%          corresponding objective values (which are probably noisy)
+%          corresponding objective values (which are probably
+%          noisy)
+% evolution_function = string with name of function to evolve new
+%          putative legal solutions. Should take three arguments,
+%          two parent, and a structure containing additional
+%          require meta parameters (contained in func_arg argument)
 % num_obj = number of objectives
-% func_arg = structure of cost function meta-parameters
+% func_arg = structure of cost function and evolution function  
+%          meta-parameters
 %
 % OUTPUTS:
 %

@@ -1,7 +1,7 @@
 function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,cost_function,domain_function,l,num_obj,std_mut,p_cross,func_arg)
 
 
-% function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,extra_evals,cost_function,domain_function,l,num_obj,p_mut,p_cross,func_arg)
+% function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,cost_function,domain_function,l,num_obj,p_mut,p_cross,func_arg)
 %
 % Code relates to:
 % Fieldsend JE & Everson RM.
@@ -30,7 +30,7 @@ function [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(evaluations,cost_function,domain_fu
 %          optimised, should take a design vector and the func_arg 
 %          structure as arguments and return a 1 by num_obj vector of 
 %          corresponding objective values (which are probably noisy)
-% domain_function = string with name of function to checak legality of 
+% domain_function = string with name of function to check legality of 
 %          solution, should take a design vector and the func_arg structure 
 %          as arguments and return 1 if the design is legal, 0 otherwise  
 % l = number of design variables
