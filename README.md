@@ -13,7 +13,7 @@ Please run "help RTEA" in the matlab terminal for details of inputs and use.
 
 Example usage:
 
-'''matlab
+```matlab
 num_obj = 2; % two objectives
 num_var=30; % 30 design variables
 mut_width = 0.2; % mutation width
@@ -27,4 +27,4 @@ func_arg.lwb = zeros(1,num_var);
 func_arg.noise = ones(1,num_obj)*0.1;
 
 [I_dom, X, Y_mo, Y_n, Y_dom] = RTEA(10000,'cost_dtlz2_noise','check_dtlz_legality',num_var,num_obj,0.2,0.8,func_arg);
-'''
+```
