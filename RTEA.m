@@ -186,12 +186,14 @@ end
 x = X(copy_index,:);
 if rand()<p_cross
     x2 = X(copy_index2,:);
-    x= SBX(x,x2,20);
+    x= SBX(x,x2,20,func_arg);
 end
 x = vary(domain_function,x,l,std_mut,func_arg);
 %--------------------------------------------------------------------------
 function x_c = SBX(x1,x2,SBX_n)
 
+x1 = (x1./func_arg.range)-func_arg.lwb;
+x2 = (x2./func_arg.range)-func_arg.lwb;
 % simulated binary crossover
 l = length(x1);
 x_c =x1;
@@ -209,7 +211,7 @@ for k=1:l
             mean_p=0.5*(x1(k)+x2(k));
             c1=mean_p-0.5*beta*abs(x1(k)-x2(k));
             c2=mean_p+0.5*beta*abs(x1(k)-x2(k));
-            if (c1>=func_arg.lwb(k) && c1<=func_arg.upb(k)) && (c2>=func_arg.lwb(k) && c2<=func_arg.upb(k))
+            if (c1>=0.0 && c1<=1.0) && (c2>=0.0 && c2<=1.0)
                 valid=1;
             end
         end
@@ -220,7 +222,7 @@ for k=1:l
         end
     end
 end
-
+x_c = (x_c.*func_arg.range)+func_arg.lwb;
 %--------------------------------------------------------------------------
 function c = vary(domain_function,c,l,std_mut,func_arg)
 
@@ -230,9 +232,9 @@ p=c;
 %Perturbs a single parameter of a solution vector
 I=randperm(l);
 i=I(1); %select a decision variable at random
-p(i) = randn()*std_mut(i)+c(i); %mutate with additive Gaussian noise
+p(i) = randn()*std_mut(i)*func_arg.range(i)+c(i); %mutate with additive Gaussian noise
 while (feval(domain_function,p,func_arg)==0)    %ensure in valid range
-    p(i)=randn()*std_mut(i)+c(i); %mutate with additive Gaussian noise
+    p(i)=randn()*std_mut(i)*func_arg.range(i)+c(i); %mutate with additive Gaussian noise
 end
 c=p;
 
