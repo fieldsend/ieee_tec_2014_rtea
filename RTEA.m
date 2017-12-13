@@ -209,7 +209,7 @@ for k=1:l
             mean_p=0.5*(x1(k)+x2(k));
             c1=mean_p-0.5*beta*abs(x1(k)-x2(k));
             c2=mean_p+0.5*beta*abs(x1(k)-x2(k));
-            if (c1>=0.0 && c1<=1.0) && (c2>=0.0 && c2<=1.0)
+            if (c1>=func_arg.lwb(k) && c1<=func_arg.upb(k)) && (c2>=func_arg.lwb(k) && c2<=func_arg.upb(k))
                 valid=1;
             end
         end
