@@ -192,8 +192,8 @@ x = vary(domain_function,x,l,std_mut,func_arg);
 %--------------------------------------------------------------------------
 function x_c = SBX(x1,x2,SBX_n)
 
-x1 = (x1./func_arg.range)-func_arg.lwb;
-x2 = (x2./func_arg.range)-func_arg.lwb;
+x1 = (x1-func_arg.lwb)./func_arg.range); % convert to unit range
+x2 = (x2-func_arg.lwb)./func_arg.range; % convert to unit range
 % simulated binary crossover
 l = length(x1);
 x_c =x1;
@@ -222,7 +222,7 @@ for k=1:l
         end
     end
 end
-x_c = (x_c.*func_arg.range)+func_arg.lwb;
+x_c = (x_c.*func_arg.range)+func_arg.lwb; % convert back to design range
 %--------------------------------------------------------------------------
 function c = vary(domain_function,c,l,std_mut,func_arg)
 
