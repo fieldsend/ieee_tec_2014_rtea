@@ -5,7 +5,10 @@ Matlab code for the rolling-tide evolutionary algorithm described in the IEEE Tr
 "The Rolling Tide Evolutionary Algorithm:  A Multi-Objective Optimiser for Noisy Optimisation Problems" 
 by Jonathan E. Fieldsend and Richard M. Everson
 
-The paper is in press and has been available online via the IEEE Explore site since Feb 2014 (issue numeber in physical copy of IEEE Transactions on Evolutionary Computation TBC).
+The paper is in press and has been available online via the IEEE Explore site since Feb 2014 (issue number in physical copy of IEEE Transactions on Evolutionary Computation TBC).
+
+https://ore.exeter.ac.uk/repository/handle/10871/17063
+https://doi.org/10.1109/TEVC.2014.2304415
 
 Code additionally requires the single link guardian data structure in my gecco_2014_changing_objectives repository to run (specifically the single_link_guardian_iterative.m file)
 
